@@ -12,6 +12,11 @@ namespace WebAppPelda.Controllers
         {
             _logger = logger;
         }
+        public IActionResult Sub3()
+        {
+            List<Customer> lingling = new CustomerController().GetCustomersFromDataBase();
+            return View(lingling);
+        }
         public IActionResult CustomerList()
         {
             List<Customer> list = new CustomerController().GetCustomersFromDataBase();
