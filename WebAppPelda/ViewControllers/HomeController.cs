@@ -12,11 +12,21 @@ namespace WebAppPelda.Controllers
         {
             _logger = logger;
         }
-
+        public IActionResult CustomerList()
+        {
+            List<Customer> list = new CustomerController().GetCustomers();
+            return View(list);
+        }
         public IActionResult SubPage()
         {
-            string message = "Hello from subpage";
-            return View(message);
+            Customer customer = new Customer
+            {
+                Id = 1,
+                Name = "John Doe",
+                Phone = "123-456-7890",
+                Score = 85
+            };
+            return View(customer);
         }
         public IActionResult Index()
         {

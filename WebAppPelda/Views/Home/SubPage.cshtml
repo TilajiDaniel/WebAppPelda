@@ -1,9 +1,13 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using WebAppPelda.Models;
+@{
+    ViewData["Title"] = "Sub Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">SubPage</h1>
     <p>LinkGyerek</a>.</p>
-    <p>@Model</p>
+    <p>@((Model as Customer).Name)</p>
+    <p>@((Model as Customer).Phone)</p>
+    <p>@((Model as Customer).Score)</p>
+
 </div>
